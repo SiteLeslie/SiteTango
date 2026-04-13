@@ -48,12 +48,12 @@ function Hero() {
   return (
     <section
       ref={heroRef}
-      className="h-[85vh] md:h-[75vh] pt-14 md:pt-16 flex flex-col md:flex-row"
+      className="md:h-[75vh] pt-14 md:pt-16 flex flex-col md:flex-row"
     >
       {/* ── LEFT: Média / Vidéo — bord à bord, sombre ── */}
       <div
         ref={mediaRef}
-        className="relative w-full md:w-1/2 min-h-[40vh] md:h-full overflow-hidden"
+        className="relative w-full md:w-1/2 h-[50vh] md:h-full overflow-hidden"
       >
         {/* Fond sombre immersif — sera remplacé par la vidéo */}
         <div className="absolute inset-0 bg-charbon">

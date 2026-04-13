@@ -56,7 +56,7 @@ export default function RootLayout({
       <body className="min-h-screen flex flex-col bg-nacre text-texte font-body font-light">
         <Navbar />
         <main className="flex-1">
-          <PageTransition>{children}</PageTransition>
+          {children}
         </main>
         <Footer />
         <WhatsAppButton />
