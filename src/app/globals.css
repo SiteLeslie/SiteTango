@@ -1,0 +1,89 @@
+@import "tailwindcss";
+
+@theme inline {
+  /* Palette Leslie Folcarelli — LUMINEUX */
+
+  /* Fonds */
+  --color-blanc: #FFFFFF;
+  --color-nacre: #FAF8F3;
+  --color-creme: #F4EDE0;
+  --color-sable: #EDE5D8;
+  --color-beige: #E2D8C8;
+
+  /* Accents chauds */
+  --color-champagne: #C8B48A;
+  --color-champagne-clair: #DDD0B8;
+  --color-dore: #96824E;
+  --color-brun: #4A3728;
+  --color-taupe: #6B5D4F;
+
+  /* Textes */
+  --color-noir: #1a1714;
+  --color-charbon: #2e2a24;
+  --color-texte: #3d3830;
+  --color-texte-doux: #7A6E60;
+
+  /* Bordures & surfaces */
+  --color-border: #E2D8C8;
+  --color-surface: #FAF8F3;
+
+  /* Fonts */
+  --font-display: var(--font-cormorant), Georgia, serif;
+  --font-body: var(--font-montserrat), system-ui, sans-serif;
+  --font-script: var(--font-script), cursive;
+
+  /* Fluid typography */
+  --font-size-fluid-hero: clamp(48px, 7vw, 96px);
+  --font-size-fluid-h1: clamp(36px, 4.5vw, 64px);
+  --font-size-fluid-h2: clamp(24px, 3vw, 44px);
+  --font-size-fluid-h3: clamp(18px, 2vw, 28px);
+  --font-size-fluid-body: clamp(14px, 1.1vw, 18px);
+  --font-size-fluid-sm: clamp(11px, 0.9vw, 14px);
+  --font-size-fluid-xs: clamp(9px, 0.7vw, 11px);
+
+  /* Fluid spacing */
+  --spacing-section: clamp(48px, 8vw, 120px);
+  --spacing-container: clamp(20px, 5vw, 80px);
+
+  /* Easing */
+  --ease-tango: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-smooth: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* Base styles */
+body {
+  background: var(--color-nacre);
+  color: var(--color-texte);
+  font-family: var(--font-body);
+  font-weight: 300;
+  line-height: 1.8;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-nacre);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-champagne);
+  border-radius: 3px;
+}
+
+/* Selection */
+::selection {
+  background: rgba(200, 180, 138, 0.3);
+  color: var(--color-noir);
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
