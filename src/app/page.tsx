@@ -97,19 +97,19 @@ function Hero() {
             </span>
           </div>
 
-          <h1 className="hero-animate font-display text-[clamp(50px,6vw,96px)] font-light leading-[1] text-noir whitespace-nowrap mb-5">
+          <h1 className="hero-animate font-display text-[clamp(32px,6vw,96px)] font-light leading-[1] text-noir md:whitespace-nowrap mb-5">
             Leslie <em className="italic text-brun">Folcarelli</em>
           </h1>
 
-          <p className="hero-animate text-[clamp(14px,1.1vw,16px)] tracking-[1px] text-dore mb-8 whitespace-nowrap">
+          <p className="hero-animate text-[clamp(11px,1.1vw,16px)] tracking-[1px] text-dore mb-8 md:whitespace-nowrap">
             Danseuse professionnelle &middot; Professeure de tango argentin
           </p>
 
-          <p className="hero-animate font-script text-[clamp(24px,2.5vw,38px)] text-brun mb-6 whitespace-nowrap">
+          <p className="hero-animate font-script text-[clamp(16px,2.5vw,38px)] text-brun mb-6 md:whitespace-nowrap">
             La connexion entre deux &Acirc;mes, deux C&oelig;urs, deux Corps
           </p>
 
-          <p className="hero-animate text-[clamp(15px,1.1vw,18px)] text-taupe mb-10 whitespace-nowrap">
+          <p className="hero-animate text-[clamp(12px,1.1vw,18px)] text-taupe mb-10 md:whitespace-nowrap">
             Un sublime mariage d&apos;&Eacute;l&eacute;gance, de Sensualit&eacute;, d&apos;&Eacute;coute &amp; de Connexion
           </p>
 
