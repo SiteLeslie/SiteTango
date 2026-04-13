@@ -112,7 +112,7 @@ export default function Biographie() {
   return (
     <>
       {/* ── HERO SPLIT ── */}
-      <section className="flex flex-col md:flex-row">
+      <section className="flex flex-col md:flex-row pt-14 md:pt-0">
         {/* Photo sticky */}
         <div className="relative w-full md:w-1/2 min-h-[50vh] md:min-h-0">
           <div className="md:sticky md:top-0 md:h-screen w-full">

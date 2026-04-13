@@ -48,7 +48,7 @@ function Hero() {
   return (
     <section
       ref={heroRef}
-      className="h-[70vh] flex flex-col md:flex-row"
+      className="h-[85vh] md:h-[75vh] pt-14 md:pt-16 flex flex-col md:flex-row"
     >
       {/* ── LEFT: Média / Vidéo — bord à bord, sombre ── */}
       <div

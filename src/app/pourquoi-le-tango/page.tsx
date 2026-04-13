@@ -67,12 +67,12 @@ export default function PourquoiLeTango() {
   return (
     <>
       {/* ── HERO IMMERSIF ── */}
-      <section className="relative min-h-[70vh] flex items-center overflow-hidden">
+      <section className="relative min-h-[70vh] flex items-center overflow-hidden pt-16">
         <div className="absolute inset-0 bg-charbon">
           <div className="absolute inset-0 bg-gradient-to-r from-noir/80 via-charbon/60 to-noir/80" />
         </div>
 
-        <div ref={heroRef} className="relative z-10 max-w-[min(900px,90vw)] mx-auto text-center px-[clamp(20px,5vw,80px)] py-24">
+        <div ref={heroRef} className="relative z-10 max-w-[min(900px,90vw)] mx-auto text-center px-[clamp(20px,5vw,80px)] py-16">
           <p className="hero-animate text-[clamp(10px,0.85vw,12px)] tracking-[4px] uppercase text-champagne mb-6">
             Le tango argentin
           </p>

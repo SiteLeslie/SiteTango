@@ -97,7 +97,7 @@ export default function CoursCollectifs() {
   return (
     <>
       {/* ── TITRE ── */}
-      <section ref={heroRef} className="pt-28 pb-10 px-[clamp(20px,5vw,80px)] text-center">
+      <section ref={heroRef} className="pt-20 md:pt-28 pb-10 px-[clamp(20px,5vw,80px)] text-center">
         <h1 className="hero-animate font-display text-[clamp(36px,5vw,64px)] font-light leading-[1.1] text-noir mb-4">
           Cours collectifs
         </h1>

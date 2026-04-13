@@ -57,12 +57,12 @@ export default function CoursTangoNice() {
   return (
     <>
       {/* ── HERO ── */}
-      <section className="relative min-h-[60vh] flex items-center overflow-hidden">
+      <section className="relative min-h-[60vh] flex items-center overflow-hidden pt-16">
         <div className="absolute inset-0 bg-charbon">
           <div className="absolute inset-0 bg-gradient-to-r from-noir/80 via-charbon/60 to-noir/80" />
         </div>
 
-        <div ref={heroRef} className="relative z-10 max-w-[min(900px,90vw)] mx-auto text-center px-[clamp(20px,5vw,80px)] py-24">
+        <div ref={heroRef} className="relative z-10 max-w-[min(900px,90vw)] mx-auto text-center px-[clamp(20px,5vw,80px)] py-16">
           <div className="hero-animate inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blanc/5 border border-champagne/30 mb-6">
             <span className="text-champagne text-sm">◆</span>
             <span className="text-[clamp(10px,0.85vw,12px)] tracking-[1px] uppercase text-champagne-clair font-medium">

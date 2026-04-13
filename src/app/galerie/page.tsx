@@ -59,7 +59,7 @@ export default function Galerie() {
   return (
     <>
       {/* ── TITRE ── */}
-      <section ref={titleRef} className="pt-28 pb-8 px-[clamp(16px,3vw,40px)] text-center">
+      <section ref={titleRef} className="pt-20 md:pt-28 pb-8 px-[clamp(16px,3vw,40px)] text-center">
         <h1 className="animate font-display text-[clamp(36px,5vw,64px)] font-light leading-[1.1] text-noir mb-4">
           Galerie
         </h1>
