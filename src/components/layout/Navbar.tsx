@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useRef, useCallback } from "react";
+import { useState, useEffect, useCallback } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
@@ -19,24 +19,26 @@ export default function Navbar() {
 
   useEffect(() => {
     setMobileOpen(false);
+    document.body.style.overflow = "";
   }, [pathname]);
 
-  const openMobileMenu = useCallback(() => {
-    setMobileOpen(true);
-    document.body.style.overflow = "hidden";
+  const toggleMenu = useCallback(() => {
+    setMobileOpen((prev) => {
+      const next = !prev;
+      document.body.style.overflow = next ? "hidden" : "";
+      return next;
+    });
   }, []);
 
-  const closeMobileMenu = useCallback(() => {
+  const closeMenu = useCallback(() => {
     setMobileOpen(false);
     document.body.style.overflow = "";
   }, []);
 
   return (
     <>
-      {/* ── BARRE DE NAV ── */}
       <header className="fixed top-0 left-0 right-0 z-50 bg-brun shadow-md shadow-brun/20">
         <nav className="flex items-center justify-between py-3 px-5 md:px-6 xl:px-10">
-          {/* Logo */}
           <Link
             href="/"
             className="font-display text-xl font-light text-blanc hover:text-champagne-clair transition-colors duration-300 whitespace-nowrap shrink-0"
@@ -44,7 +46,6 @@ export default function Navbar() {
             Leslie Folcarelli
           </Link>
 
-          {/* Desktop nav */}
           <div className="hidden xl:flex items-center gap-5 2xl:gap-7">
             {navLinks.map((link) => (
               <Link
@@ -71,41 +72,44 @@ export default function Navbar() {
             </Link>
           </div>
 
-          {/* Mobile burger — pattern Kurt Collections */}
           <button
             type="button"
-            onClick={openMobileMenu}
+            onClick={toggleMenu}
             aria-expanded={mobileOpen}
-            aria-label="Ouvrir le menu"
-            className="flex h-11 w-11 items-center justify-center xl:hidden"
+            aria-label={mobileOpen ? "Fermer le menu" : "Ouvrir le menu"}
+            className="flex h-12 w-12 items-center justify-center xl:hidden"
           >
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="1.5" strokeLinecap="round">
-              <line x1="3" y1="6" x2="21" y2="6" />
-              <line x1="3" y1="12" x2="21" y2="12" />
-              <line x1="3" y1="18" x2="21" y2="18" />
+              {mobileOpen ? (
+                <>
+                  <line x1="18" y1="6" x2="6" y2="18" />
+                  <line x1="6" y1="6" x2="18" y2="18" />
+                </>
+              ) : (
+                <>
+                  <line x1="3" y1="6" x2="21" y2="6" />
+                  <line x1="3" y1="12" x2="21" y2="12" />
+                  <line x1="3" y1="18" x2="21" y2="18" />
+                </>
+              )}
             </svg>
           </button>
         </nav>
       </header>
 
-      {/* ── MOBILE DRAWER — pattern Kurt Collections ── */}
       {mobileOpen && (
-        <div className="fixed inset-0 z-50 xl:hidden" aria-modal="true" role="dialog">
-          {/* Overlay sombre */}
+        <div className="fixed inset-0 z-[60] xl:hidden" aria-modal="true" role="dialog">
           <div
             className="absolute inset-0 bg-noir/30"
-            onClick={closeMobileMenu}
+            onClick={closeMenu}
             aria-hidden="true"
           />
-
-          {/* Panel */}
-          <div className="absolute right-0 top-0 bottom-0 w-80 max-w-full bg-brun z-50 flex flex-col">
-            {/* Header du panel */}
+          <div className="absolute right-0 top-0 bottom-0 w-80 max-w-full bg-brun flex flex-col">
             <div className="flex items-center justify-between px-5 py-4 border-b border-blanc/10">
               <span className="font-display text-lg text-blanc">Menu</span>
               <button
                 type="button"
-                onClick={closeMobileMenu}
+                onClick={closeMenu}
                 aria-label="Fermer le menu"
                 className="flex h-11 w-11 items-center justify-center"
               >
@@ -115,14 +119,12 @@ export default function Navbar() {
                 </svg>
               </button>
             </div>
-
-            {/* Liens */}
             <nav className="flex flex-col py-4">
               {navLinks.map((link) => (
                 <Link
                   key={link.href}
                   href={link.href}
-                  onClick={closeMobileMenu}
+                  onClick={closeMenu}
                   className={`px-6 py-3 text-lg font-light transition-colors ${
                     pathname === link.href ? "text-champagne" : "text-blanc hover:text-champagne-clair"
                   }`}
@@ -133,7 +135,7 @@ export default function Navbar() {
               <div className="px-6 pt-6">
                 <Link
                   href="/contact"
-                  onClick={closeMobileMenu}
+                  onClick={closeMenu}
                   className="block text-center px-6 py-3 rounded-full border border-champagne text-champagne hover:bg-champagne hover:text-brun transition-all duration-300 text-sm tracking-wider uppercase"
                 >
                   Contactez-moi

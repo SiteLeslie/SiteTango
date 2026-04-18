@@ -112,7 +112,7 @@ export default function Footer() {
           <div className="font-display text-lg font-light text-brun">
             Leslie Folcarelli
           </div>
-          <div className="text-[10px] text-taupe tracking-wide">
+          <div className="text-[10px] text-taupe tracking-wide" suppressHydrationWarning>
             &copy; {new Date().getFullYear()} Leslie Folcarelli &middot; Tango
             Argentin &middot; Nice
           </div>

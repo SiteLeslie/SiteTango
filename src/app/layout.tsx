@@ -3,8 +3,6 @@ import { Cormorant_Garamond, Montserrat, Great_Vibes } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
-import PageTransition from "@/components/layout/PageTransition";
-import WhatsAppButton from "@/components/ui/WhatsAppButton";
 
 const cormorant = Cormorant_Garamond({
   subsets: ["latin"],
@@ -51,7 +49,8 @@ export default function RootLayout({
   return (
     <html
       lang="fr"
-      className={`${cormorant.variable} ${montserrat.variable} ${greatVibes.variable}`}
+      className={[cormorant.variable, montserrat.variable, greatVibes.variable].join(" ")}
+      suppressHydrationWarning
     >
       <body className="min-h-screen flex flex-col bg-nacre text-texte font-body font-light">
         <Navbar />
@@ -59,7 +58,6 @@ export default function RootLayout({
           {children}
         </main>
         <Footer />
-        <WhatsAppButton />
       </body>
     </html>
   );
