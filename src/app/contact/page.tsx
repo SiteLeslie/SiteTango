@@ -51,14 +51,14 @@ export default function Contact() {
           <div className="animate grid grid-cols-1 sm:grid-cols-2 gap-6 mb-14">
             {/* Téléphone */}
             <a
-              href="tel:+33677509897"
+              href="https://wa.me/33677509897?text=Bonjour%20Leslie%2C%20je%20vous%20contacte%20depuis%20votre%20site" target="_blank" rel="noopener noreferrer"
               className="group bg-brun text-blanc rounded-xl p-8 flex flex-col items-center gap-4 hover:bg-dore transition-colors duration-300"
             >
               <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
               </svg>
               <span className="font-display text-[clamp(18px,1.5vw,22px)] font-light">
-                Appeler Leslie
+                Écrire à Leslie
               </span>
               <span className="text-[clamp(13px,1vw,15px)] text-blanc/70">
                 +33 (0)6 77 50 98 97

@@ -1,6 +1,7 @@
 "use client";
 
 import { useRef } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { useGSAP } from "@gsap/react";
 import { gsap, ScrollTrigger } from "@/lib/gsapConfig";
@@ -112,54 +113,56 @@ export default function Biographie() {
   return (
     <>
       {/* ── HERO SPLIT ── */}
-      <section className="flex flex-col md:flex-row pt-14 md:pt-0">
-        {/* Photo sticky */}
-        <div className="relative w-full md:w-1/2 min-h-[50vh] md:min-h-0">
-          <div className="md:sticky md:top-0 md:h-screen w-full">
-            <div className="h-[50vh] md:h-full bg-charbon flex items-center justify-center">
-              <div className="text-center">
-                <span className="text-5xl block mb-4 text-champagne/30">✦</span>
-                <span className="text-[10px] tracking-[3px] uppercase text-blanc/30">
-                  Photo artistique de Leslie
-                </span>
-              </div>
+      <section className="flex flex-col md:flex-row">
+        {/* Photo sticky — fond crème assorti au fond de la photo, image positionnée sous le navbar, entière */}
+        <div className="relative w-full md:w-1/2 bg-sable min-h-[70vh] md:min-h-0">
+          <div className="md:sticky md:top-0 md:h-screen w-full relative">
+            <div className="absolute top-16 md:top-20 left-0 right-0 bottom-0">
+              <Image
+                src="/images/leslie-folcarelli/leslie-hero.png"
+                alt="Leslie Folcarelli, danseuse et professeure de tango argentin"
+                fill
+                priority
+                sizes="(max-width: 768px) 100vw, 50vw"
+                className="object-contain object-top"
+              />
             </div>
           </div>
         </div>
 
         {/* Bio — avec titre de championne dès le début */}
         <div ref={heroRef} className="w-full md:w-1/2 bg-blanc px-[clamp(30px,5vw,80px)] py-[clamp(80px,8vw,120px)]">
-          <div className="max-w-xl">
-            <p className="bio-animate text-[clamp(9px,0.75vw,11px)] tracking-[5px] uppercase text-dore mb-4">
+          <div className="max-w-xl mx-auto text-center">
+            <p className="bio-animate text-[clamp(11px,0.9vw,13px)] tracking-[5px] uppercase text-dore mb-4">
               Qui suis-je
             </p>
 
             {/* Badge champion */}
             <div className="bio-animate inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-brun/5 border border-champagne/30 mb-6">
               <span className="text-champagne text-sm">◆</span>
-              <span className="text-[clamp(10px,0.8vw,12px)] tracking-[1px] uppercase text-brun font-medium">
+              <span className="text-[clamp(12px,0.95vw,14px)] tracking-[1px] uppercase text-brun font-medium">
                 Championne d&apos;Europe 2019
               </span>
             </div>
 
-            <h1 className="bio-animate font-display text-[clamp(36px,4vw,64px)] font-light leading-[1.1] text-noir mb-2">
+            <h1 className="bio-animate font-display text-[clamp(44px,5vw,80px)] font-light leading-[1.1] text-noir mb-3">
               Leslie <em className="italic text-brun">Folcarelli</em>
             </h1>
 
-            <p className="bio-animate text-[clamp(10px,0.8vw,12px)] tracking-[3px] uppercase text-dore mb-8">
-              Danseuse &middot; Professeure &middot; DJ internationale
+            <p className="bio-animate text-[clamp(13px,1vw,15px)] tracking-[3px] uppercase text-dore mb-8">
+              Danseuse &middot; Professeure &middot; DJ
             </p>
 
-            <div className="bio-animate w-12 h-px bg-champagne mb-10" />
+            <div className="bio-animate w-12 h-px bg-champagne mb-10 mx-auto" />
 
-            <p className="bio-animate font-display italic text-[clamp(18px,1.6vw,24px)] text-brun/80 leading-snug mb-8">
+            <p className="bio-animate font-display italic text-[clamp(22px,2vw,30px)] text-brun/80 leading-snug mb-10">
               Une présence sincère, un tango vivant — mon engagement
               dans la transmission et la création.
             </p>
 
-            <div className="space-y-6 text-[clamp(14px,1.05vw,16px)] text-texte leading-relaxed">
+            <div className="space-y-6 text-[clamp(16px,1.2vw,19px)] text-texte leading-relaxed">
               <p className="bio-animate">
-                Danseuse, professeure et DJ internationale de tango argentin,
+                Danseuse, professeure et DJ de tango argentin,
                 semi-finaliste du championnat du monde et championne d&apos;Europe,
                 je construis depuis plus de dix ans un univers artistique
                 où se rencontrent rigueur, sensibilité et engagement.

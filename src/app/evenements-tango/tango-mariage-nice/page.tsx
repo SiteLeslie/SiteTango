@@ -230,10 +230,10 @@ export default function MariageEvenements() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
-                href="tel:+33677509897"
+                href="https://wa.me/33677509897?text=Bonjour%20Leslie%2C%20je%20vous%20contacte%20depuis%20votre%20site" target="_blank" rel="noopener noreferrer"
                 className="px-8 py-3.5 bg-brun text-blanc rounded-full text-sm tracking-wider uppercase hover:bg-dore transition-colors duration-300"
               >
-                Appeler Leslie
+                Écrire à Leslie
               </a>
               <a
                 href="mailto:lesliefolcarelli.tango@gmail.com"
