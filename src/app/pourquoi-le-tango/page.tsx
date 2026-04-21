@@ -11,22 +11,18 @@ import SectionReveal from "@/components/ui/SectionReveal";
 const dimensions = [
   {
     title: "Physiquement",
-    icon: "◯",
     text: "Vous prenez conscience de votre corps, gagnez en élégance, travaillez votre posture, votre souplesse, tout en douceur. Vous apprenez à bouger autrement, à prévenir les douleurs et la raideur du quotidien.",
   },
   {
     title: "Intellectuellement",
-    icon: "◈",
     text: "Vous stimulez votre créativité, renforcez votre mémoire, et surtout, vous apprenez à lâcher prise.",
   },
   {
     title: "Émotionnellement",
-    icon: "◆",
     text: "Vous explorez vos ressentis, apprenez à accueillir vos émotions, à vous comprendre et à comprendre l'autre, à vivre l'instant sans jugement, dans la bienveillance.",
   },
   {
     title: "Spirituellement",
-    icon: "✦",
     text: "Vous percevez ce qui ne se voit pas, vous vous connectez à des énergies subtiles, vous découvrez une forme de langage silencieux, profond, presque méditatif.",
   },
 ];
@@ -169,12 +165,9 @@ export default function PourquoiLeTango() {
                 key={i}
                 className="dim-card bg-blanc border border-beige rounded-lg p-8 hover:border-champagne hover:shadow-lg hover:shadow-champagne/10 transition-all duration-300"
               >
-                <div className="flex items-center gap-4 mb-5">
-                  <span className="text-2xl text-champagne">{dim.icon}</span>
-                  <h3 className="font-display text-[clamp(24px,2.2vw,32px)] font-light text-noir">
-                    {dim.title}
-                  </h3>
-                </div>
+                <h3 className="font-display text-[clamp(24px,2.2vw,32px)] font-light text-noir mb-5">
+                  {dim.title}
+                </h3>
                 <div className="w-10 h-px bg-champagne mb-5" />
                 <p className="text-[clamp(14px,1.05vw,16px)] text-taupe leading-relaxed">
                   {dim.text}

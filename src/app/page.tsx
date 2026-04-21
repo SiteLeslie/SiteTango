@@ -5,7 +5,6 @@ import Link from "next/link";
 import { useGSAP } from "@gsap/react";
 import { gsap, ScrollTrigger } from "@/lib/gsapConfig";
 import SectionReveal from "@/components/ui/SectionReveal";
-import TestimonialSlider from "@/components/ui/TestimonialSlider";
 
 /* ───────────────────────── HERO SPLIT ───────────────────── */
 
@@ -294,21 +293,6 @@ function AboutPreview() {
   );
 }
 
-/* ─────────────────── TÉMOIGNAGES ──────────────────────── */
-
-function Testimonials() {
-  return (
-    <SectionReveal className="py-[clamp(64px,10vw,140px)] px-[clamp(20px,5vw,80px)] bg-creme/60 border-t border-b border-beige">
-      <div className="max-w-[min(1200px,90vw)] mx-auto">
-        <p className="text-[clamp(9px,0.7vw,11px)] tracking-[3px] uppercase text-dore text-center mb-12">
-          Ce qu&apos;ils disent
-        </p>
-        <TestimonialSlider />
-      </div>
-    </SectionReveal>
-  );
-}
-
 /* ─────────────────── AGENDA À VENIR ──────────────────── */
 
 const upcomingEvents = [
@@ -467,7 +451,6 @@ export default function Home() {
       <Hero />
       <Portals />
       <AboutPreview />
-      <Testimonials />
       <Agenda />
       <CtaSection />
     </>
