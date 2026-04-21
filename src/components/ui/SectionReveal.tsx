@@ -33,6 +33,7 @@ export default function SectionReveal({
       duration: 1,
       delay,
       ease: "power2.out",
+      immediateRender: false,
       scrollTrigger: {
         trigger: ref.current,
         start: "top 85%",

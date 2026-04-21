@@ -190,9 +190,10 @@ function Portals() {
         duration: 0.8,
         stagger: 0.15,
         ease: "power2.out",
+        immediateRender: false,
         scrollTrigger: {
           trigger: containerRef.current,
-          start: "top 80%",
+          start: "top 85%",
           once: true,
         },
       });
@@ -201,7 +202,7 @@ function Portals() {
   );
 
   return (
-    <section className="py-[clamp(48px,8vw,120px)] px-[clamp(20px,5vw,80px)]">
+    <section className="py-[clamp(32px,5vw,80px)] px-[clamp(20px,5vw,80px)]">
       <div
         ref={containerRef}
         className="max-w-[min(1200px,90vw)] mx-auto grid grid-cols-1 md:grid-cols-3 gap-6"
@@ -349,9 +350,10 @@ function Agenda() {
         duration: 0.7,
         stagger: 0.12,
         ease: "power2.out",
+        immediateRender: false,
         scrollTrigger: {
           trigger: containerRef.current,
-          start: "top 80%",
+          start: "top 85%",
           once: true,
         },
       });
