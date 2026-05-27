@@ -18,8 +18,17 @@ import { config, collection, singleton, fields } from "@keystatic/core";
    En prod sur Vercel : basculer vers `kind: 'github'` avec OAuth.
    ───────────────────────────────────────────────────────────── */
 
+// En dev local on garde le filesystem ; en prod sur Vercel on bascule
+// vers le mode `github` où chaque sauvegarde fait un commit sur le repo.
+const isDev = process.env.NODE_ENV === "development";
+
 export default config({
-  storage: { kind: "local" },
+  storage: isDev
+    ? { kind: "local" }
+    : {
+        kind: "github",
+        repo: { owner: "SiteLeslie", name: "SiteTango" },
+      },
 
   ui: {
     brand: { name: "Leslie Folcarelli" },
