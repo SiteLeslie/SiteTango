@@ -19,10 +19,11 @@ import { config, collection, singleton, fields } from "@keystatic/core";
    ───────────────────────────────────────────────────────────── */
 
 // Storage automatique :
-//  - Mode `github` si les secrets sont configurés (Vercel prod après setup)
+//  - Mode `github` si NEXT_PUBLIC_KEYSTATIC_GITHUB_APP_SLUG est défini
+//    (variable PUBLIQUE → cohérente client ↔ serveur)
 //  - Mode `local` sinon (dev local + prod tant que les secrets ne sont pas là)
 // Le reader lit toujours le filesystem côté serveur dans les deux cas.
-const useGithub = Boolean(process.env.KEYSTATIC_GITHUB_CLIENT_ID);
+const useGithub = Boolean(process.env.NEXT_PUBLIC_KEYSTATIC_GITHUB_APP_SLUG);
 
 export default config({
   storage: useGithub
