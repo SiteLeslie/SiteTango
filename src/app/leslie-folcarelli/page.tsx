@@ -22,7 +22,7 @@ export default async function Biographie() {
   return (
     <BiographieClient
       heroPhoto={page?.hero ?? null}
-      heroAlt={page?.heroAlt || "Leslie Folcarelli, danseuse et professeure de tango argentin"}
+      heroAlt="Leslie Folcarelli, danseuse et professeure de tango argentin"
     />
   );
 }

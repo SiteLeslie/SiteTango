@@ -22,7 +22,7 @@ export default async function Contact() {
   return (
     <ContactClient
       heroPhoto={page?.hero ?? null}
-      heroAlt={page?.heroAlt || "Leslie Folcarelli"}
+      heroAlt="Leslie Folcarelli"
     />
   );
 }

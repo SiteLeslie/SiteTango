@@ -157,10 +157,6 @@ export default config({
           directory: "public/images/accueil",
           publicPath: "/images/accueil/",
         }),
-        apercuAlt: fields.text({
-          label: "Texte alternatif de la photo",
-          defaultValue: "Leslie Folcarelli, professeure de tango argentin",
-        }),
       },
     }),
 
@@ -175,10 +171,6 @@ export default config({
           description: "Grande photo sticky à gauche, à côté de la biographie",
           directory: "public/images/leslie-folcarelli",
           publicPath: "/images/leslie-folcarelli/",
-        }),
-        heroAlt: fields.text({
-          label: "Texte alternatif de la photo",
-          defaultValue: "Leslie Folcarelli, danseuse et professeure de tango argentin",
         }),
       },
     }),
@@ -283,10 +275,6 @@ export default config({
           label: "Photo hero (bandeau en haut)",
           directory: "public/images/contact",
           publicPath: "/images/contact/",
-        }),
-        heroAlt: fields.text({
-          label: "Texte alternatif de la photo",
-          defaultValue: "Leslie Folcarelli",
         }),
       },
     }),

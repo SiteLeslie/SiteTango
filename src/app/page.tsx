@@ -26,7 +26,7 @@ export default async function Home() {
   return (
     <HomeClient
       aboutPhoto={page?.apercu ?? null}
-      aboutAlt={page?.apercuAlt || "Leslie Folcarelli, professeure de tango argentin"}
+      aboutAlt="Leslie Folcarelli, professeure de tango argentin"
       events={events}
     />
   );
