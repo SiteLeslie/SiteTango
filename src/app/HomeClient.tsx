@@ -256,13 +256,23 @@ function AboutPreview({ aboutPhoto, aboutAlt }: { aboutPhoto: string | null; abo
         {/* Photo */}
         <div className="relative w-64 h-80 md:w-72 md:h-96 rounded-lg bg-creme border border-beige flex items-center justify-center flex-shrink-0 overflow-hidden">
           {aboutPhoto ? (
-            <Image
-              src={aboutPhoto}
-              alt={aboutAlt}
-              fill
-              sizes="(max-width: 768px) 256px, 288px"
-              className="object-cover"
-            />
+            <>
+              <Image
+                src={aboutPhoto}
+                alt=""
+                aria-hidden
+                fill
+                sizes="(max-width: 768px) 256px, 288px"
+                className="object-cover scale-110 blur-2xl opacity-80"
+              />
+              <Image
+                src={aboutPhoto}
+                alt={aboutAlt}
+                fill
+                sizes="(max-width: 768px) 256px, 288px"
+                className="object-contain"
+              />
+            </>
           ) : (
             <div className="text-center">
               <span className="text-4xl block mb-3 text-champagne">✦</span>

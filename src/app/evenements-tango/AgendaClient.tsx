@@ -183,13 +183,23 @@ function EventCard({ event }: { event: AgendaEvent }) {
         {/* PHOTO — colonne centre */}
         <div className="md:w-56 relative h-64 md:h-auto md:min-h-[240px] bg-charbon flex-shrink-0">
           {event.photo ? (
-            <Image
-              src={event.photo}
-              alt={event.title}
-              fill
-              sizes="(max-width: 768px) 100vw, 224px"
-              className="object-cover"
-            />
+            <>
+              <Image
+                src={event.photo}
+                alt=""
+                aria-hidden
+                fill
+                sizes="(max-width: 768px) 100vw, 224px"
+                className="object-cover scale-110 blur-2xl opacity-80"
+              />
+              <Image
+                src={event.photo}
+                alt={event.title}
+                fill
+                sizes="(max-width: 768px) 100vw, 224px"
+                className="object-contain"
+              />
+            </>
           ) : (
             <>
               <div className="absolute inset-0 bg-gradient-to-br from-noir/50 via-charbon/30 to-brun/20" />
