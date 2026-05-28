@@ -33,7 +33,6 @@ export default function ContactClient({ heroPhoto, heroAlt }: Props) {
             src={heroPhoto}
             alt={heroAlt}
             placeholderLabel="Photo de Leslie"
-            objectClassName="object-cover"
             sizes="100vw"
             priority
           />

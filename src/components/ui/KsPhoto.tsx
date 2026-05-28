@@ -1,9 +1,11 @@
 import Image from "next/image";
 
 /* ─────────────────────────────────────────────────────────────
-   KsPhoto — affiche une image Keystatic, ou un placeholder
-   sombre dégradé avec une étiquette si l'image n'a pas encore
-   été uploadée par Leslie.
+   KsPhoto — affiche une image Keystatic dans son cadre sans
+   jamais la couper. La photo est en object-contain (entière)
+   et un fond flou réutilise la même image en object-cover pour
+   remplir les marges quand le ratio diffère du cadre.
+   Fallback : placeholder dégradé si Leslie n'a pas encore uploadé.
    ───────────────────────────────────────────────────────────── */
 
 type Props = {
@@ -11,8 +13,6 @@ type Props = {
   alt: string;
   /** Label affiché dans le placeholder si pas d'image */
   placeholderLabel?: string;
-  /** Tailwind classes pour l'object-fit / object-position */
-  objectClassName?: string;
   /** Sizes attribute pour next/image — défaut générique */
   sizes?: string;
   /** Priorité de chargement (LCP) */
@@ -23,20 +23,29 @@ export default function KsPhoto({
   src,
   alt,
   placeholderLabel = "Photo",
-  objectClassName = "object-cover",
   sizes = "(max-width: 768px) 100vw, 50vw",
   priority = false,
 }: Props) {
   if (src) {
     return (
-      <Image
-        src={src}
-        alt={alt}
-        fill
-        priority={priority}
-        sizes={sizes}
-        className={objectClassName}
-      />
+      <>
+        <Image
+          src={src}
+          alt=""
+          aria-hidden
+          fill
+          sizes={sizes}
+          className="object-cover scale-110 blur-2xl opacity-80"
+        />
+        <Image
+          src={src}
+          alt={alt}
+          fill
+          priority={priority}
+          sizes={sizes}
+          className="object-contain"
+        />
+      </>
     );
   }
   return (
