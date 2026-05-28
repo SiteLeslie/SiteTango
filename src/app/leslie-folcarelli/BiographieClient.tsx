@@ -161,7 +161,7 @@ export default function BiographieClient({ heroPhoto, heroAlt }: Props) {
             <div className="bio-animate w-12 h-px bg-champagne mb-10 mx-auto" />
 
             <p className="bio-animate font-display italic text-[clamp(22px,2vw,30px)] text-brun/80 leading-snug mb-10">
-              Une présence sincère, un tango vivant — mon engagement
+              Une présence sincère, un tango vivant — son engagement
               dans la transmission et la création.
             </p>
 
@@ -169,13 +169,13 @@ export default function BiographieClient({ heroPhoto, heroAlt }: Props) {
               <p className="bio-animate">
                 Danseuse, professeure et DJ de tango argentin,
                 semi-finaliste du championnat du monde et championne d&apos;Europe,
-                je construis depuis plus de dix ans un univers artistique
+                elle construit depuis plus de dix ans un univers artistique
                 où se rencontrent rigueur, sensibilité et engagement.
               </p>
 
               <p className="bio-animate">
-                Mon approche du tango est à la fois ancrée dans la tradition
-                et ouverte à l&apos;exploration. Je développe une pratique
+                Son approche du tango est à la fois ancrée dans la tradition
+                et ouverte à l&apos;exploration. Elle développe une pratique
                 exigeante, centrée sur la <em className="font-display italic text-brun">qualité
                 de la présence</em>, la connexion authentique, et la liberté
                 d&apos;interprétation.
@@ -183,8 +183,8 @@ export default function BiographieClient({ heroPhoto, heroAlt }: Props) {
 
               <p className="bio-animate">
                 Formée auprès de nombreux maestros en Europe et en Argentine,
-                j&apos;affine un style qui allie précision technique, musicalité
-                et écoute fine du partenaire. Je m&apos;intéresse
+                elle affine un style qui allie précision technique, musicalité
+                et écoute fine du partenaire. Elle s&apos;intéresse
                 particulièrement aux dynamiques de l&apos;improvisation,
                 à l&apos;intelligence corporelle, et à ce que le tango permet
                 d&apos;exprimer au-delà des pas.
@@ -192,7 +192,7 @@ export default function BiographieClient({ heroPhoto, heroAlt }: Props) {
 
               <p className="bio-animate">
                 Sur scène comme en cours, dans les milongas ou les projets
-                artistiques, je cherche à créer des espaces où le tango reste
+                artistiques, elle cherche à créer des espaces où le tango reste
                 vivant, habité et profondément humain.
               </p>
             </div>
@@ -413,7 +413,7 @@ export default function BiographieClient({ heroPhoto, heroAlt }: Props) {
                 <div className="w-8 h-px bg-champagne mb-4" />
                 <p className="text-[clamp(13px,1vw,15px)] text-taupe leading-relaxed">
                   Semi-finaliste du championnat du monde, championne d&apos;Europe.
-                  Sur scène ou en milonga, je danse avec une présence qui
+                  Sur scène ou en milonga, elle danse avec une présence qui
                   touche — précision technique, musicalité et écoute fine.
                 </p>
               </div>
@@ -425,7 +425,7 @@ export default function BiographieClient({ heroPhoto, heroAlt }: Props) {
                 <div className="w-8 h-px bg-champagne mb-4" />
                 <p className="text-[clamp(13px,1vw,15px)] text-taupe leading-relaxed">
                   Cours réguliers, stages thématiques, accompagnements
-                  personnalisés. Je propose une pédagogie claire qui donne des outils
+                  personnalisés. Elle propose une pédagogie claire qui donne des outils
                   précis tout en valorisant l&apos;expression personnelle.
                   Plus de 500 élèves accompagnés.
                 </p>
@@ -437,9 +437,9 @@ export default function BiographieClient({ heroPhoto, heroAlt }: Props) {
                 <h3 className="font-display text-[clamp(22px,2vw,30px)] font-light text-noir mb-2">DJ Tango</h3>
                 <div className="w-8 h-px bg-champagne mb-4" />
                 <p className="text-[clamp(13px,1vw,15px)] text-taupe leading-relaxed">
-                  Avec ma sensibilité de danseuse, je capte
-                  l&apos;ambiance et je crée des tandas qui parlent au corps.
-                  Je musicalise en France, Italie, Espagne, Grèce, Hongrie,
+                  Avec sa sensibilité de danseuse, elle capte
+                  l&apos;ambiance et crée des tandas qui parlent au corps.
+                  Elle musicalise en France, Italie, Espagne, Grèce, Hongrie,
                   Tchéquie, Chypre.
                 </p>
               </div>

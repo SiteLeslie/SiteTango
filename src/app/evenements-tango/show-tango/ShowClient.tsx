@@ -56,16 +56,26 @@ export default function ShowClient({ hero }: Props) {
             </div>
 
             <div className="bg-blanc border border-beige rounded-lg p-[clamp(24px,4vw,50px)] text-center">
-              <p className="text-[clamp(15px,1.15vw,18px)] text-taupe leading-relaxed mb-6">
-                Si vous êtes organisateurs de milonga, marathons, festivals ou
-                tout autre événement et que vous souhaitez collaborer pour des
-                stages, des shows ou musicaliser une soirée, je reste à votre
-                disposition pour toutes informations.
+              <p className="font-display italic text-[clamp(18px,1.7vw,26px)] text-brun leading-snug mb-6">
+                Entre tradition et modernité, mes spectacles racontent
+                l&apos;histoire d&apos;un lien, d&apos;un regard,
+                d&apos;une musique qui unit les corps.
               </p>
-              <p className="text-[clamp(15px,1.15vw,18px)] text-taupe leading-relaxed">
-                Je propose diverses formules et je travaille seule ou en
-                collaboration avec différents danseurs professionnels
-                européens et argentins.
+              <p className="text-[clamp(15px,1.15vw,18px)] text-taupe leading-relaxed mb-8">
+                Qu&apos;il soit sensuel, théâtral, festif ou participatif,
+                le tango touche toujours au cœur.
+              </p>
+              <div className="w-12 h-px bg-champagne mx-auto mb-8" />
+              <p className="text-[clamp(15px,1.15vw,18px)] text-taupe leading-relaxed mb-5">
+                Vous avez une idée, un projet, une envie particulière ?
+                Je serai ravie d&apos;en discuter avec vous pour construire
+                un moment sur-mesure qui marquera les esprits.
+              </p>
+              <p className="text-[clamp(12px,0.95vw,14px)] tracking-[2px] uppercase text-dore">
+                Spectacle &middot; Performance &middot; Animation &middot; Initiation artistique
+              </p>
+              <p className="mt-2 font-display italic text-[clamp(14px,1.1vw,17px)] text-brun/80">
+                Tout est possible.
               </p>
             </div>
           </SectionReveal>
