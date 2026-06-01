@@ -1,5 +1,15 @@
 {
   "photoMixte": "/images/cours-tango-nice/collectifs/photoMixte.jpg",
   "photoFollower": "/images/cours-tango-nice/collectifs/photoFollower.jpeg",
-  "photoChoregraphique": "/images/cours-tango-nice/collectifs/photoChoregraphique.jpeg"
+  "photoChoregraphique": "/images/cours-tango-nice/collectifs/photoChoregraphique.jpeg",
+  "tarifs": {
+    "uniteMoins25": "12€",
+    "unitePlus25": "15€",
+    "forfait1Moins25": "43€",
+    "forfait1Plus25": "55€",
+    "forfait2Moins25": "90€",
+    "forfait2Plus25": "115€",
+    "forfait3Moins25": "134€",
+    "forfait3Plus25": "170€"
+  }
 }

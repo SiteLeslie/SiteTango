@@ -1,3 +1,12 @@
 {
-  "photo": "/images/cours-tango-nice/prives/photo.avif"
+  "photo": "/images/cours-tango-nice/prives/photo.avif",
+  "tarifs": {
+    "cours1h": "50€",
+    "cours2h": "95€",
+    "cours2hMention": "au lieu de 100€",
+    "forfait4h": "190€",
+    "forfait4hMention": "au lieu de 200€",
+    "forfait6h": "285€",
+    "forfait6hMention": "au lieu de 300€"
+  }
 }

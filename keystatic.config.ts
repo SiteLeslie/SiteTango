@@ -241,6 +241,46 @@ export default config({
           directory: "public/images/cours-tango-nice/collectifs",
           publicPath: "/images/cours-tango-nice/collectifs/",
         }),
+        tarifs: fields.object(
+          {
+            uniteMoins25: fields.text({
+              label: "Cours à l'unité — moins de 25 ans",
+              defaultValue: "12€",
+            }),
+            unitePlus25: fields.text({
+              label: "Cours à l'unité — plus de 25 ans",
+              defaultValue: "15€",
+            }),
+            forfait1Moins25: fields.text({
+              label: "Forfait 1 cours/semaine — moins de 25 ans",
+              defaultValue: "43€",
+            }),
+            forfait1Plus25: fields.text({
+              label: "Forfait 1 cours/semaine — plus de 25 ans",
+              defaultValue: "55€",
+            }),
+            forfait2Moins25: fields.text({
+              label: "Forfait 2 cours/semaine — moins de 25 ans",
+              defaultValue: "90€",
+            }),
+            forfait2Plus25: fields.text({
+              label: "Forfait 2 cours/semaine — plus de 25 ans",
+              defaultValue: "115€",
+            }),
+            forfait3Moins25: fields.text({
+              label: "Forfait 3 cours/semaine — moins de 25 ans",
+              defaultValue: "134€",
+            }),
+            forfait3Plus25: fields.text({
+              label: "Forfait 3 cours/semaine — plus de 25 ans",
+              defaultValue: "170€",
+            }),
+          },
+          {
+            label: "Tarifs",
+            description: "Les prix affichés sur la page. Gardez le « € ».",
+          }
+        ),
       },
     }),
 
@@ -255,6 +295,30 @@ export default config({
           directory: "public/images/cours-tango-nice/prives",
           publicPath: "/images/cours-tango-nice/prives/",
         }),
+        tarifs: fields.object(
+          {
+            cours1h: fields.text({ label: "Cours 1h", defaultValue: "50€" }),
+            cours2h: fields.text({ label: "Cours 2h", defaultValue: "95€" }),
+            cours2hMention: fields.text({
+              label: "Cours 2h — mention (laisser vide pour rien)",
+              defaultValue: "au lieu de 100€",
+            }),
+            forfait4h: fields.text({ label: "Forfait 4h / mois", defaultValue: "190€" }),
+            forfait4hMention: fields.text({
+              label: "Forfait 4h — mention (laisser vide pour rien)",
+              defaultValue: "au lieu de 200€",
+            }),
+            forfait6h: fields.text({ label: "Forfait 6h / mois", defaultValue: "285€" }),
+            forfait6hMention: fields.text({
+              label: "Forfait 6h — mention (laisser vide pour rien)",
+              defaultValue: "au lieu de 300€",
+            }),
+          },
+          {
+            label: "Tarifs",
+            description: "Les prix affichés sur la page. Gardez le « € ».",
+          }
+        ),
       },
     }),
 

@@ -7,22 +7,16 @@ import { gsap } from "@/lib/gsapConfig";
 import SectionReveal from "@/components/ui/SectionReveal";
 import KsPhoto from "@/components/ui/KsPhoto";
 
+type Tarif = { name: string; price: string; detail: string | null };
+
 type Props = {
   photo: string | null;
+  tarifs: Tarif[];
 };
-
-/* ───────────────── TARIFS ───────────────── */
-
-const tarifs = [
-  { name: "Cours 1h", price: "50€", detail: null },
-  { name: "Cours 2h", price: "95€", detail: "au lieu de 100€" },
-  { name: "Forfait 4h / mois", price: "190€", detail: "au lieu de 200€" },
-  { name: "Forfait 6h / mois", price: "285€", detail: "au lieu de 300€" },
-];
 
 /* ───────────────── PAGE ───────────────── */
 
-export default function CoursPrivesClient({ photo }: Props) {
+export default function CoursPrivesClient({ photo, tarifs }: Props) {
   const heroRef = useRef<HTMLDivElement>(null);
 
   useGSAP(

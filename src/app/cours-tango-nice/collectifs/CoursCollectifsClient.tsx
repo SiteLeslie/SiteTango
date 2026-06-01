@@ -7,8 +7,13 @@ import { gsap } from "@/lib/gsapConfig";
 import SectionReveal from "@/components/ui/SectionReveal";
 import KsPhoto from "@/components/ui/KsPhoto";
 
+type Tarif = { label: string; price: string };
+type Forfait = { name: string; prices: Tarif[] };
+
 type Props = {
   photos: (string | null)[];
+  tarifsUnite: Tarif[];
+  forfaits: Forfait[];
 };
 
 /* ───────────────── 3 COURS ───────────────── */
@@ -52,40 +57,9 @@ const cours = [
   },
 ];
 
-/* ───────────────── TARIFS ───────────────── */
-
-const tarifsUnite = [
-  { label: "Cours à l'unité (-25 ans)", price: "12€" },
-  { label: "Cours à l'unité (+25 ans)", price: "15€" },
-];
-
-const forfaits = [
-  {
-    name: "1 cours / semaine",
-    prices: [
-      { label: "-25 ans", price: "43€" },
-      { label: "+25 ans", price: "55€" },
-    ],
-  },
-  {
-    name: "2 cours / semaine",
-    prices: [
-      { label: "-25 ans", price: "90€" },
-      { label: "+25 ans", price: "115€" },
-    ],
-  },
-  {
-    name: "3 cours / semaine",
-    prices: [
-      { label: "-25 ans", price: "134€" },
-      { label: "+25 ans", price: "170€" },
-    ],
-  },
-];
-
 /* ───────────────── PAGE ───────────────── */
 
-export default function CoursCollectifsClient({ photos }: Props) {
+export default function CoursCollectifsClient({ photos, tarifsUnite, forfaits }: Props) {
   const heroRef = useRef<HTMLDivElement>(null);
 
   useGSAP(

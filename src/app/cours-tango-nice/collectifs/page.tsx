@@ -19,6 +19,37 @@ export const dynamic = "force-dynamic";
 
 export default async function CoursCollectifs() {
   const page = await reader.singletons.pageCoursCollectifs.read();
+  const t = page?.tarifs;
+
+  const tarifsUnite = [
+    { label: "Cours à l'unité (-25 ans)", price: t?.uniteMoins25 ?? "12€" },
+    { label: "Cours à l'unité (+25 ans)", price: t?.unitePlus25 ?? "15€" },
+  ];
+
+  const forfaits = [
+    {
+      name: "1 cours / semaine",
+      prices: [
+        { label: "-25 ans", price: t?.forfait1Moins25 ?? "43€" },
+        { label: "+25 ans", price: t?.forfait1Plus25 ?? "55€" },
+      ],
+    },
+    {
+      name: "2 cours / semaine",
+      prices: [
+        { label: "-25 ans", price: t?.forfait2Moins25 ?? "90€" },
+        { label: "+25 ans", price: t?.forfait2Plus25 ?? "115€" },
+      ],
+    },
+    {
+      name: "3 cours / semaine",
+      prices: [
+        { label: "-25 ans", price: t?.forfait3Moins25 ?? "134€" },
+        { label: "+25 ans", price: t?.forfait3Plus25 ?? "170€" },
+      ],
+    },
+  ];
+
   return (
     <CoursCollectifsClient
       photos={[
@@ -26,6 +57,8 @@ export default async function CoursCollectifs() {
         page?.photoFollower ?? null,
         page?.photoChoregraphique ?? null,
       ]}
+      tarifsUnite={tarifsUnite}
+      forfaits={forfaits}
     />
   );
 }
