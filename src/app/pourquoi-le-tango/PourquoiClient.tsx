@@ -5,6 +5,11 @@ import Link from "next/link";
 import { useGSAP } from "@gsap/react";
 import { gsap, ScrollTrigger } from "@/lib/gsapConfig";
 import SectionReveal from "@/components/ui/SectionReveal";
+import KsPhoto from "@/components/ui/KsPhoto";
+
+type Props = {
+  photo: string | null;
+};
 
 /* ───────────────── 4 DIMENSIONS ───────────────── */
 
@@ -29,7 +34,7 @@ const dimensions = [
 
 /* ───────────────── PAGE ───────────────── */
 
-export default function PourquoiClient() {
+export default function PourquoiClient({ photo }: Props) {
   const heroRef = useRef<HTMLDivElement>(null);
   const dimensionsRef = useRef<HTMLDivElement>(null);
 
@@ -87,8 +92,21 @@ export default function PourquoiClient() {
 
       {/* ── TEXTE POÉTIQUE — les mots de Leslie ── */}
       <section className="py-[clamp(64px,10vw,120px)] px-[clamp(20px,5vw,80px)]">
-        <div className="max-w-[min(800px,90vw)] mx-auto">
-          <div className="space-y-8 text-[clamp(15px,1.15vw,18px)] text-texte leading-relaxed">
+        <div className="max-w-[min(1100px,90vw)] mx-auto flex flex-col md:flex-row gap-[clamp(32px,5vw,72px)] items-center md:items-start">
+          {/* Photo à gauche */}
+          <SectionReveal className="w-full md:w-[42%] flex-shrink-0">
+            <div className="relative w-full aspect-[3/4] rounded-lg overflow-hidden bg-creme border border-beige md:sticky md:top-28">
+              <KsPhoto
+                src={photo}
+                alt="Couple dansant le tango argentin"
+                placeholderLabel="Photo tango"
+                sizes="(max-width: 768px) 90vw, 42vw"
+              />
+            </div>
+          </SectionReveal>
+
+          {/* Texte à droite */}
+          <div className="flex-1 space-y-8 text-[clamp(15px,1.15vw,18px)] text-texte leading-relaxed">
             <SectionReveal>
               <p>
                 L&apos;union de deux personnes, deux âmes, deux cœurs, deux corps

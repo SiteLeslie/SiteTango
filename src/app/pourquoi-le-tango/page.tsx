@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { reader } from "@/lib/keystaticReader";
 import PourquoiClient from "./PourquoiClient";
 
 export const metadata: Metadata = {
@@ -14,6 +15,9 @@ export const metadata: Metadata = {
   },
 };
 
-export default function PourquoiLeTango() {
-  return <PourquoiClient />;
+export const dynamic = "force-dynamic";
+
+export default async function PourquoiLeTango() {
+  const page = await reader.singletons.pagePourquoi.read();
+  return <PourquoiClient photo={page?.photo ?? null} />;
 }

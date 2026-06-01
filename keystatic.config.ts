@@ -38,6 +38,7 @@ export default config({
     navigation: {
       "Accueil": ["pageAccueil"],
       "Qui suis-je": ["pageBio"],
+      "Pourquoi le Tango": ["pagePourquoi"],
       "Mes offres": [
         "pageMesOffres",
         "pageCoursCollectifs",
@@ -172,6 +173,22 @@ export default config({
           description: "Grande photo sticky à gauche, à côté de la biographie",
           directory: "public/images/leslie-folcarelli",
           publicPath: "/images/leslie-folcarelli/",
+        }),
+      },
+    }),
+
+    // ───────────── POURQUOI LE TANGO ─────────────
+    pagePourquoi: singleton({
+      label: "Pourquoi le Tango",
+      path: "content/page-pourquoi/",
+      format: { data: "json" },
+      schema: {
+        photo: fields.image({
+          label: "Photo (première section)",
+          description:
+            "Grande photo affichée à gauche du texte d'introduction, en haut de la page",
+          directory: "public/images/pourquoi-le-tango",
+          publicPath: "/images/pourquoi-le-tango/",
         }),
       },
     }),
