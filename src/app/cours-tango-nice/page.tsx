@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { reader } from "@/lib/keystaticReader";
 import MesOffresClient from "./MesOffresClient";
 
 export const metadata: Metadata = {
@@ -14,6 +15,19 @@ export const metadata: Metadata = {
   },
 };
 
-export default function CoursTangoNice() {
-  return <MesOffresClient />;
+export const dynamic = "force-dynamic";
+
+export default async function CoursTangoNice() {
+  const page = await reader.singletons.pageMesOffres.read();
+  return (
+    <MesOffresClient
+      thumbnails={[
+        page?.thumbCollectifs ?? null,
+        page?.thumbPrives ?? null,
+        page?.thumbMilonga ?? null,
+        page?.thumbShow ?? null,
+        page?.thumbMariage ?? null,
+      ]}
+    />
+  );
 }

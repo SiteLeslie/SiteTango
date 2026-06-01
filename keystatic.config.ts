@@ -39,6 +39,7 @@ export default config({
       "Accueil": ["pageAccueil"],
       "Qui suis-je": ["pageBio"],
       "Mes offres": [
+        "pageMesOffres",
         "pageCoursCollectifs",
         "pageCoursPrives",
         "pageMilonga",
@@ -171,6 +172,47 @@ export default config({
           description: "Grande photo sticky à gauche, à côté de la biographie",
           directory: "public/images/leslie-folcarelli",
           publicPath: "/images/leslie-folcarelli/",
+        }),
+      },
+    }),
+
+    // ───────────── MES OFFRES — APERÇU (5 MINIATURES) ─────────────
+    // Page « Mes offres » (/cours-tango-nice) : la grille de 5 cartes.
+    // Chaque champ = la photo (miniature) affichée sur une carte.
+    pageMesOffres: singleton({
+      label: "Mes offres (aperçu)",
+      path: "content/page-mes-offres/",
+      format: { data: "json" },
+      schema: {
+        thumbCollectifs: fields.image({
+          label: "Miniature — Cours collectifs",
+          description: "Photo de la carte « Cours collectifs »",
+          directory: "public/images/cours-tango-nice/offres",
+          publicPath: "/images/cours-tango-nice/offres/",
+        }),
+        thumbPrives: fields.image({
+          label: "Miniature — Cours privés",
+          description: "Photo de la carte « Cours privés »",
+          directory: "public/images/cours-tango-nice/offres",
+          publicPath: "/images/cours-tango-nice/offres/",
+        }),
+        thumbMilonga: fields.image({
+          label: "Miniature — Milonga En Tus Brazos",
+          description: "Photo de la carte « Milonga En Tus Brazos »",
+          directory: "public/images/cours-tango-nice/offres",
+          publicPath: "/images/cours-tango-nice/offres/",
+        }),
+        thumbShow: fields.image({
+          label: "Miniature — Show, Stage & DJ",
+          description: "Photo de la carte « Show, Stage & DJ »",
+          directory: "public/images/cours-tango-nice/offres",
+          publicPath: "/images/cours-tango-nice/offres/",
+        }),
+        thumbMariage: fields.image({
+          label: "Miniature — Mariage, Anniversaire & Entreprise",
+          description: "Photo de la carte « Mariage, Anniversaire & Entreprise »",
+          directory: "public/images/cours-tango-nice/offres",
+          publicPath: "/images/cours-tango-nice/offres/",
         }),
       },
     }),

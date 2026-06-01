@@ -5,6 +5,12 @@ import Link from "next/link";
 import { useGSAP } from "@gsap/react";
 import { gsap } from "@/lib/gsapConfig";
 import SectionReveal from "@/components/ui/SectionReveal";
+import KsPhoto from "@/components/ui/KsPhoto";
+
+type Props = {
+  /** Miniatures éditables dans Keystatic, dans l'ordre des offres ci-dessous */
+  thumbnails: (string | null)[];
+};
 
 /* ───────────────── 5 OFFRES ───────────────── */
 
@@ -38,7 +44,7 @@ const offers = [
 
 /* ───────────────── PAGE ───────────────── */
 
-export default function MesOffresClient() {
+export default function MesOffresClient({ thumbnails }: Props) {
   const heroRef = useRef<HTMLDivElement>(null);
   const offersRef = useRef<HTMLDivElement>(null);
 
@@ -87,7 +93,7 @@ export default function MesOffresClient() {
           {/* Toutes les cartes — même taille */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
             {offers.map((offer, i) => (
-              <OfferCard key={i} offer={offer} />
+              <OfferCard key={i} offer={offer} thumbnail={thumbnails[i] ?? null} />
             ))}
           </div>
         </div>
@@ -125,19 +131,26 @@ export default function MesOffresClient() {
 
 /* ───────────────── COMPOSANT CARTE OFFRE ───────────────── */
 
-function OfferCard({ offer }: { offer: (typeof offers)[number] }) {
+function OfferCard({
+  offer,
+  thumbnail,
+}: {
+  offer: (typeof offers)[number];
+  thumbnail: string | null;
+}) {
   return (
     <Link
       href={offer.href}
       className="offer-card group bg-sable/40 border border-beige rounded-lg overflow-hidden hover:border-champagne hover:shadow-lg hover:shadow-champagne/10 transition-all duration-300 flex flex-col"
     >
-      {/* Photo placeholder — format portrait */}
+      {/* Photo (éditable dans Keystatic) — format portrait */}
       <div className="relative h-56 bg-charbon overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-noir/60 via-charbon/40 to-brun/30 group-hover:scale-105 transition-transform duration-500" />
-        <div className="absolute inset-0 flex items-center justify-center">
-          <span className="text-[10px] tracking-[3px] uppercase text-blanc/30">
-            Photo
-          </span>
+        <div className="transition-transform duration-500 group-hover:scale-105 absolute inset-0">
+          <KsPhoto
+            src={thumbnail}
+            alt={offer.title}
+            sizes="(max-width: 768px) 100vw, 33vw"
+          />
         </div>
       </div>
 
