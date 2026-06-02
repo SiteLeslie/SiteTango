@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { reader } from "@/lib/keystaticReader";
-import GalerieClient, { type GalerieItem } from "./GalerieClient";
+import GalerieClient, { type GalerieItem, type GalerieVideo } from "./GalerieClient";
 
 export const metadata: Metadata = {
   title: "Galerie photos et vidéos",
@@ -17,9 +17,12 @@ export const metadata: Metadata = {
 export const dynamic = "force-dynamic";
 
 export default async function Galerie() {
-  const raw = await reader.collections.galerie.all();
+  const [rawPhotos, rawVideos] = await Promise.all([
+    reader.collections.galerie.all(),
+    reader.collections.galerieVideos.all(),
+  ]);
 
-  const photos: GalerieItem[] = raw
+  const photos: GalerieItem[] = rawPhotos
     .map((entry) => ({
       slug: entry.slug,
       title: entry.entry.title,
@@ -31,5 +34,17 @@ export default async function Galerie() {
     .sort((a, b) => a.order - b.order)
     .map(({ order: _order, ...rest }) => rest);
 
-  return <GalerieClient photos={photos} />;
+  const videos: GalerieVideo[] = rawVideos
+    .map((entry) => ({
+      slug: entry.slug,
+      title: entry.entry.title,
+      video: entry.entry.video ?? "",
+      caption: entry.entry.caption,
+      order: entry.entry.order ?? 100,
+    }))
+    .filter((v) => v.video)
+    .sort((a, b) => a.order - b.order)
+    .map(({ order: _order, ...rest }) => rest);
+
+  return <GalerieClient photos={photos} videos={videos} />;
 }

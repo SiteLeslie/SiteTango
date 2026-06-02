@@ -48,7 +48,7 @@ export default config({
         "pageMariage",
       ],
       "Agenda": ["events"],
-      "Galerie": ["galerie"],
+      "Galerie": ["galerie", "galerieVideos"],
       "Contact": ["pageContact"],
     },
   },
@@ -106,9 +106,9 @@ export default config({
       },
     }),
 
-    // ───────────── GALERIE ─────────────
+    // ───────────── GALERIE — PHOTOS ─────────────
     galerie: collection({
-      label: "Galerie",
+      label: "Galerie — Photos",
       slugField: "title",
       path: "content/galerie/*/",
       format: { data: "json" },
@@ -140,6 +140,48 @@ export default config({
         order: fields.integer({
           label: "Ordre d'affichage",
           description: "Plus le nombre est petit, plus la photo apparaît tôt",
+          defaultValue: 100,
+        }),
+      },
+    }),
+
+    // ───────────── GALERIE — VIDÉOS ─────────────
+    // Upload direct d'un fichier vidéo (.mp4, .webm…) + une description.
+    // S'affiche dans la section « Vidéos » de la page Galerie.
+    galerieVideos: collection({
+      label: "Galerie — Vidéos",
+      slugField: "title",
+      path: "content/galerie-videos/*/",
+      format: { data: "json" },
+      entryLayout: "form",
+      columns: ["title", "order"],
+      schema: {
+        title: fields.slug({
+          name: {
+            label: "Titre / description courte",
+            description: "Ex : Show tango — Festival de Nice",
+            validation: { length: { min: 1 } },
+          },
+          slug: {
+            label: "Nom dans l'URL",
+            description:
+              "Généré automatiquement depuis le titre. Sert d'identifiant unique pour la vidéo (vous n'avez pas besoin d'y toucher).",
+          },
+        }),
+        video: fields.file({
+          label: "Vidéo",
+          description: "Fichier vidéo à uploader (.mp4 recommandé)",
+          directory: "public/videos/galerie",
+          publicPath: "/videos/galerie/",
+          validation: { isRequired: true },
+        }),
+        caption: fields.text({
+          label: "Légende (optionnelle)",
+          description: "Affichée sous la vidéo",
+        }),
+        order: fields.integer({
+          label: "Ordre d'affichage",
+          description: "Plus le nombre est petit, plus la vidéo apparaît tôt",
           defaultValue: 100,
         }),
       },

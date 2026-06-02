@@ -12,7 +12,20 @@ export type GalerieItem = {
   caption: string | null;
 };
 
-export default function GalerieClient({ photos }: { photos: GalerieItem[] }) {
+export type GalerieVideo = {
+  slug: string;
+  title: string;
+  video: string;
+  caption: string | null;
+};
+
+export default function GalerieClient({
+  photos,
+  videos,
+}: {
+  photos: GalerieItem[];
+  videos: GalerieVideo[];
+}) {
   const [lightbox, setLightbox] = useState<string | null>(null);
   const titleRef = useRef<HTMLDivElement>(null);
 
@@ -87,28 +100,42 @@ export default function GalerieClient({ photos }: { photos: GalerieItem[] }) {
       </section>
 
       {/* ── VIDÉOS ── */}
-      <section className="px-[clamp(16px,3vw,40px)] pb-[clamp(40px,6vw,80px)]">
-        <div className="max-w-[1600px] mx-auto">
-          <div className="text-center mb-10">
-            <div className="w-16 h-px bg-champagne mx-auto mb-10" />
-            <h2 className="font-display text-[clamp(28px,3vw,44px)] font-light text-noir mb-4">
-              Vidéos
-            </h2>
-            <p className="text-[clamp(14px,1.1vw,17px)] text-taupe max-w-lg mx-auto">
-              Shows, performances et moments de danse en mouvement.
-            </p>
-          </div>
+      {videos.length > 0 && (
+        <section className="px-[clamp(16px,3vw,40px)] pb-[clamp(40px,6vw,80px)]">
+          <div className="max-w-[1600px] mx-auto">
+            <div className="text-center mb-10">
+              <div className="w-16 h-px bg-champagne mx-auto mb-10" />
+              <h2 className="font-display text-[clamp(28px,3vw,44px)] font-light text-noir mb-4">
+                Vidéos
+              </h2>
+              <p className="text-[clamp(14px,1.1vw,17px)] text-taupe max-w-lg mx-auto">
+                Shows, performances et moments de danse en mouvement.
+              </p>
+            </div>
 
-          {/* Grille vidéos — placeholders en attendant les URLs YouTube/Vimeo */}
-          <div className="space-y-5">
-            <VideoPlaceholder size="large" />
             <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-              <VideoPlaceholder />
-              <VideoPlaceholder />
+              {videos.map((video) => (
+                <figure key={video.slug}>
+                  <div className="relative aspect-video bg-charbon rounded-lg overflow-hidden">
+                    <video
+                      src={video.video}
+                      controls
+                      preload="metadata"
+                      className="w-full h-full object-cover"
+                      aria-label={video.title}
+                    />
+                  </div>
+                  {video.caption && (
+                    <figcaption className="mt-3 text-[13px] text-taupe text-center">
+                      {video.caption}
+                    </figcaption>
+                  )}
+                </figure>
+              ))}
             </div>
           </div>
-        </div>
-      </section>
+        </section>
+      )}
 
       {/* ── LIGHTBOX ── */}
       {current && (
@@ -186,26 +213,6 @@ function EmptyState() {
         La galerie est en cours de mise à jour. En attendant, retrouvez Leslie
         sur Instagram pour de nouvelles photos régulièrement.
       </p>
-    </div>
-  );
-}
-
-function VideoPlaceholder({ size = "small" }: { size?: "small" | "large" }) {
-  const circle = size === "large" ? "w-16 h-16" : "w-14 h-14";
-  const svgSize = size === "large" ? 20 : 18;
-  return (
-    <div className="relative aspect-video bg-charbon rounded-lg overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-br from-noir/30 via-charbon/15 to-brun/10" />
-      <div className="absolute inset-0 flex items-center justify-center">
-        <div className="group cursor-pointer flex flex-col items-center gap-3">
-          <div className={`${circle} rounded-full border border-blanc/30 flex items-center justify-center group-hover:border-champagne/60 group-hover:scale-110 transition-all duration-500`}>
-            <svg width={svgSize} height={svgSize} viewBox="0 0 24 24" fill="none" className="ml-1">
-              <polygon points="6,3 20,12 6,21" fill="white" opacity="0.8" />
-            </svg>
-          </div>
-          <span className="text-[10px] tracking-[3px] uppercase text-blanc/40">Vidéo</span>
-        </div>
-      </div>
     </div>
   );
 }
